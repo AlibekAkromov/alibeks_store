@@ -17,7 +17,7 @@ const router = express.Router();
 
 router.get("/users", isLoggedIn, async (req, res) => {
   try {
-    hasRole(req, res, ["admin"]);
+    hasRole(req, res, ["admin", "superadmin", "helper"]);
 
     let {
       limit = 10,
